@@ -6,7 +6,7 @@ const queryArray = [
   "SELECT Name FROM country WHERE Population BETWEEN 500000 AND 1000000",
   'SELECT Name FROM country WHERE continent = "Europe"',
   "SELECT Name FROM country ORDER BY SurfaceArea DESC",
-  "SELECT city.Name FROM city INNER JOIN country ON city.CountryCode = country.Code WHERE (city.CountryCode = 'NLD' AND country.Code = 'NLD')",
+  "SELECT city.Name FROM city INNER JOIN country ON city.CountryCode = country.Code WHERE country.Name = 'Netherlands'",
   "SELECT Population FROM city WHERE Name = 'Rotterdam'",
   "SELECT Name FROM country ORDER BY SurfaceArea DESC LIMIT 10",
   "SELECT Name FROM city ORDER BY Population DESC LIMIT 10",
