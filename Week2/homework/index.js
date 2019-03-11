@@ -8,10 +8,17 @@ let userInput = arg[4];
 
 if (command == "query") {
   let int = parseInt(queryNr);
-  if (Number.isInteger(int) && int > 0 && queryNr > 0 && queryNr < 11) {
+  if (
+    Number.isInteger(int) &&
+    int > 0 &&
+    queryNr > 0 &&
+    queryNr < 11 &&
+    userInput
+  ) {
     asking.selectQuery(queryNr - 1, userInput);
   } else {
     console.log("Error : You need to enter a valid number between 1 and 10");
+    console.log(asking.queryFormat);
     connection.end();
   }
 }
