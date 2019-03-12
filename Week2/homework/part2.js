@@ -1,14 +1,4 @@
-const mysql = require("mysql");
-
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "hyfuser",
-  password: "hyfpassword",
-  database: "new_world"
-});
-
-connection.connect();
-console.log("Connected to MySQL");
+const connection = require("./utility/utilityConnection");
 
 let arg = process.argv;
 let queryCommand = arg[2];
@@ -39,6 +29,7 @@ function insertQuery(...values) {
     if (error) throw error;
     return console.log(results);
   });
+  connection.end();
 }
 
 if (queryCommand == "insert") {
