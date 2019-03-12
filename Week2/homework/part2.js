@@ -23,7 +23,6 @@ function insertQuery(...values) {
   ];
 
   triggerQuery = mysql.format(triggerQuery, formatParams);
-  console.log(triggerQuery);
 
   connection.query(queryInsert, function(error, results, fields) {
     if (error) throw error;
